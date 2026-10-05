@@ -123,3 +123,38 @@ li + li { margin-top: 0.6em; }
 /* Exact TEAL/ORANGE from geom-for-arxiv/scripts/plot_occupancy_simplex.py. */
 .simplex-teal { color: rgb(0.09308% 56.95430% 56.48127%); }
 .simplex-orange { color: rgb(86.90623% 40.14344% 4.64332%); }
+
+/* Paper excerpts and existing figure assets, adapted to the website layout. */
+h4 { font-size: 1em; margin: 1.5em 0 0.35em; }
+h4 + p { margin-top: 0; }
+.method-summary { font-style: normal; }
+.math.display { display: block; overflow-x: auto; max-width: 100%; padding: 0.5em 0; }
+.rollout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; }
+.rollout-panel { min-width: 0; }
+.rollout-pair { display: flex; align-items: center; justify-content: center; gap: 0.5em; }
+.rollout-pair > a { flex: 0 1 48%; min-width: 0; }
+.figure-download { display: block; }
+#fig-training_curves_craftax > .figure-download { max-width: 34em; margin: 0 auto; }
+@media (max-width: 767px) {
+  .rollout-grid { grid-template-columns: 1fr; }
+  .method-summary { margin-left: 0; margin-right: 0; }
+  .math.display { font-size: 0.85em; }
+}
+
+/* Content-specific figure sizes for the shorter review draft. */
+#fig-training_curves_craftax { max-width: 32rem; }
+#fig-highdof_combined { max-width: 48rem; }
+#fig-training_curves { max-width: 43rem; }
+#fig-potential_trace_row { max-width: 52rem; }
+#fig-emergent-behaviors { max-width: 46rem; }
+main > section > figure { width: 100%; margin: 2.25em auto; }
+main > section > figure > figcaption { width: 100%; }
+.rollout-grid { gap: 1.25em; }
+@media (max-width: 767px) {
+  #fig-training_curves > .figure-download,
+  #fig-potential_trace_row > .figure-download,
+  #fig-emergent-behaviors > .figure-download { overflow-x: auto; }
+  #fig-training_curves > .figure-download img { min-width: 34rem; }
+  #fig-potential_trace_row > .figure-download img { min-width: 42rem; }
+  #fig-emergent-behaviors > .figure-download img { min-width: 30rem; }
+}
