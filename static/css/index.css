@@ -1,0 +1,125 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+header { text-align: center; margin-bottom: 40px; }
+h1 { color: #2c3e50; line-height: 1.2; margin: 0.6em 0; font-size: 2.25em; text-wrap: balance; }
+h2, h3 { color: #34495e; line-height: 1.35; text-wrap: balance; }
+h2 { font-size: 1.55em; margin: 1em 0; }
+h3 { font-size: 1.18em; margin: 2em 0 0.8em; }
+p { margin: 0.9em 0; }
+a { color: #20638f; text-decoration: none; }
+a:hover { color: #aa551c; text-decoration: underline; }
+a:focus-visible, pre:focus-visible { outline: 2px solid #20638f; outline-offset: 4px; }
+sup { font-size: 0.65em; }
+
+.authors, .affiliations, .links {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.authors { gap: 0.25em 1.2em; font-size: 1.2em; }
+.author { font-weight: bold; white-space: nowrap; }
+.author sup { font-weight: normal; margin-left: 0.15em; }
+.affiliations { gap: 0.2em 1.5em; margin-top: 0.4em; font-size: 1.1em; }
+.affiliations > span { white-space: nowrap; }
+.contribution { font-size: 0.9em; margin-top: 0.3em; }
+.links { gap: 1em; margin-top: 20px; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  background: #363636;
+  color: #fff;
+  padding: 0.45em 1.25em;
+  border: 1px solid #363636;
+  border-radius: 999px;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.button:hover { background: #4a4a4a; color: #fff; text-decoration: none; }
+
+section { padding: 0 1em; }
+section + section { margin-top: 2.25em; padding-top: 1em; border-top: 2px solid #eee; }
+.abstract { margin: 1em 10% 2em; text-align: justify; }
+.abstract h2 { text-align: center; color: #1a1a1a; font-size: 1.25em; margin-bottom: 0; }
+
+.theorem {
+  margin: 1.5em 8%;
+  padding: 0.3em 1.2em;
+  border: 1px solid #aaa;
+  background: #f4f4f4;
+  border-radius: 4px;
+  font-style: italic;
+}
+.statement-title { font-style: normal; font-weight: bold; }
+.statement-reference { font-style: normal; }
+
+figure { margin: 2em 0; }
+figure img { display: block; width: 100%; height: auto; }
+figcaption { width: 90%; margin: 1em auto 0; font-size: 0.9em; color: #666; }
+figcaption a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+figcaption > a:first-child, figcaption > p:first-child > a:first-child { font-weight: bold; }
+.figure-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4em; align-items: center; }
+.figure-pair > * { min-width: 0; }
+.information-pair { grid-template-columns: 0.45fr 0.52fr; align-items: end; }
+.panel-caption { margin: 0.7em 0 0; text-align: center; font-size: 0.9em; font-weight: bold; color: #666; }
+.mountain > figcaption { width: 100%; margin: 0 0 1.25em; }
+.mountain-panels { max-width: 42em; margin: 0 auto; align-items: start; gap: 2em; }
+.mountain-panel { margin: 0; }
+.mountain-panel figcaption { width: 100%; margin: 0.8em 0 0; }
+.mountain-artwork { width: 100%; max-width: 250px; margin: 0 auto; }
+
+pre[class*="language-"] {
+  margin: 1em 0;
+  padding: 1em;
+  background: #f0f0f0;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  overflow-x: auto;
+}
+.bibtex code { white-space: pre-wrap; overflow-wrap: anywhere; background: none; text-shadow: none; }
+pre ::selection, pre::selection { background: #c2bfd0; }
+
+@media (max-width: 767px) {
+  body { padding: 20px 16px 32px; }
+  header { margin-bottom: 28px; }
+  h1 { font-size: 1.9em; }
+  h2 { font-size: 1.35em; }
+  h3 { font-size: 1.12em; }
+  section { padding-left: 0; padding-right: 0; }
+  .abstract { margin: 1em 0; text-align: left; }
+  .theorem { margin: 1.25em 0; padding: 0.25em 0.9em; }
+  .figure-pair, .information-pair { grid-template-columns: 1fr; gap: 1.5em; }
+  figcaption { width: 100%; text-align: left; }
+  .authors { font-size: 1.08em; gap: 0.3em 1em; }
+  .affiliations { font-size: 1em; }
+}
+
+/* Local editorial review: retain both versions until approval. */
+.review-old { background: #fff0bc; color: #765000; }
+.review-new { background: #e5f4e6; color: #17612b; }
+span.review-new { margin-left: 0.3em; }
+span.review-old:empty, span.review-new:empty { display: none; }
+div.review-old, div.review-new { padding: 0.1em 0.5em; margin: 0.4em 0; }
+.review-old .theorem, .review-new .theorem { background: transparent; color: inherit; }
+.review-old a, .review-new a { color: inherit; text-decoration: underline; }
+.math-punctuation { white-space: nowrap; }
+.figure-state { font-weight: bold; }
+/* geom-for-arxiv/scripts/skill-simplex/plotting/plot_style.py: MUTED_CYCLE_HEX[:3] */
+.state-1 { color: #8172B3; }
+.state-2 { color: #DD8452; }
+.state-3 { color: #937860; }
+li + li { margin-top: 0.6em; }
+
+/* Exact TEAL/ORANGE from geom-for-arxiv/scripts/plot_occupancy_simplex.py. */
+.simplex-teal { color: rgb(0.09308% 56.95430% 56.48127%); }
+.simplex-orange { color: rgb(86.90623% 40.14344% 4.64332%); }
