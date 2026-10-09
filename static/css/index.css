@@ -45,6 +45,8 @@ sup { font-size: 0.65em; }
   font-size: 1rem;
   white-space: nowrap;
 }
+.button:disabled { font-family: inherit; line-height: inherit; opacity: 0.65; cursor: default; }
+.button:disabled:hover { background: #363636; }
 .button:hover { background: #4a4a4a; color: #fff; text-decoration: none; }
 
 section { padding: 0 1em; }
