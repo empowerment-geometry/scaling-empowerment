@@ -1,1 +1,12 @@
 build/
+
+# Local tooling, provenance, and notes: not served by the website.
+/docs/
+/media/
+/tests/
+/tools/
+*.py
+node_modules/
+
+# Rollout exporter bookkeeping.
+static/media/rollouts/**/*.json
